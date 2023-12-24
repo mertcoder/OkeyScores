@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppNameStyle">
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">27sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="UpperAppNameStyle">
+        <item name="android:text">@string/upper_app_name</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">27sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="SkyBlueButtonStyle">
+        <item name="android:background">@drawable/sky_blue_button</item>
+        <item name="android:textColor">@color/bg_black</item>
+        <item name="android:textSize">17sp</item>
+        <item name="fontFamily">@font/poppins_thin</item>
+    </style>
+    <style name="WhiteButtonStyle">
+        <item name="android:background">@drawable/white_button</item>
+        <item name="android:textColor">@color/bg_black</item>
+        <item name="android:textSize">17sp</item>
+        <item name="fontFamily">@font/poppins_thin</item>
+    </style>
+</resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_black">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp">
+
+            <TextView
+                android:id="@+id/tvAppLogo"
+                style="@style/UpperAppNameStyle"
+                android:textStyle="bold|italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:textSize="48sp"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edUsername"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:background="#30ffffff"
+                android:hint="@string/username"
+                android:drawableStart="@drawable/username_ic"
+                android:drawableTint="@color/white"
+                android:drawablePadding="2dp"
+                android:padding="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
+                app:layout_constraintTop_toBottomOf="@id/tvAppLogo">
+            </EditText>
+
+            <EditText
+                android:id="@+id/edPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:background="#30ffffff"
+                android:hint="@string/password"
+                android:padding="15dp"
+                android:textColor="@color/white"
+                android:drawableStart="@drawable/password_icon"
+                android:drawableTint="@color/white"
+                android:drawablePadding="2dp"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
+                app:layout_constraintTop_toBottomOf="@id/edUsername">
+            </EditText>
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/forgot_password"
+                app:layout_constraintTop_toBottomOf="@id/edPassword"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                android:layout_marginTop="12dp"
+                android:textSize="16sp">
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogIn"
+                style="@style/WhiteButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="30dp"
+                android:text="@string/login"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
+                app:layout_constraintTop_toBottomOf="@id/edPassword" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSignIn"
+                style="@style/SkyBlueButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_marginBottom="62dp"
+                android:text="@string/create_account"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineRegisterLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.09" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineRegisterRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.91" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
