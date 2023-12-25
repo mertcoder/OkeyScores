@@ -35,37 +35,89 @@
                 android:textStyle="bold|italic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:textSize="48sp"
                 app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
                 app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/tvRegister"
+                android:text="Register"
+                android:layout_marginTop="5dp"
+                android:textStyle="italic"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="32sp"
+                app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                app:layout_constraintTop_toBottomOf="@+id/tvAppLogo" />
             <EditText
                 android:id="@+id/edEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="15dp"
+                android:inputType="textEmailAddress"
                 android:background="#30ffffff"
                 android:hint="@string/email"
-                android:drawableStart="@drawable/username_ic"
+                android:drawableStart="@drawable/mail_ic"
                 android:drawableTint="@color/white"
-                android:drawablePadding="2dp"
+                android:drawablePadding="4dp"
                 android:padding="15dp"
-                android:inputType="textEmailAddress"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
                 app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
-                app:layout_constraintTop_toBottomOf="@id/tvAppLogo">
+                app:layout_constraintTop_toBottomOf="@id/tvRegister">
+            </EditText>
+
+
+            <EditText
+                android:id="@+id/edUsername"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="#30ffffff"
+                android:hint="@string/username"
+                android:drawableStart="@drawable/username_ic"
+                android:drawableTint="@color/white"
+                android:drawablePadding="2dp"
+                android:padding="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
+                app:layout_constraintTop_toBottomOf="@id/edEmail">
+            </EditText>
+
+            <EditText
+                android:id="@+id/edName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:background="#30ffffff"
+                android:drawableStart="@drawable/electric_ic"
+                android:drawablePadding="2dp"
+                android:drawableTint="@color/white"
+                android:hint="@string/name"
+                android:padding="15dp"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
+                app:layout_constraintTop_toBottomOf="@id/edUsername">
             </EditText>
 
             <EditText
                 android:id="@+id/edPassword"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:background="#30ffffff"
                 android:hint="@string/password"
                 android:padding="15dp"
@@ -77,45 +129,36 @@
                 android:textColorHint="@color/white"
                 app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
                 app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
-                app:layout_constraintTop_toBottomOf="@id/edEmail">
+                app:layout_constraintTop_toBottomOf="@id/edName">
             </EditText>
-            <TextView
-                android:id="@+id/tvForgotPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="@string/forgot_password"
-                app:layout_constraintTop_toBottomOf="@id/edPassword"
-                app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
-                android:layout_marginTop="12dp"
-                android:textSize="16sp">
-            </TextView>
+
 
             <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
-                android:id="@+id/btnLogIn"
+                android:id="@+id/btnCreateAccount"
                 style="@style/WhiteButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="55dp"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="38dp"
                 android:layout_marginEnd="30dp"
-                android:text="@string/login"
+                android:text="@string/create"
                 app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
                 app:layout_constraintTop_toBottomOf="@id/edPassword" />
 
 
             <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
-                android:id="@+id/btnSignIn"
+                android:id="@+id/btnAlreadyHaveAnAccount"
                 style="@style/SkyBlueButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="55dp"
-                android:layout_marginBottom="62dp"
-                android:text="@string/create_account"
+                android:layout_marginBottom="60dp"
+                android:text="@string/already_have_an_account"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft" />
-
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guidelineRegisterLeft"

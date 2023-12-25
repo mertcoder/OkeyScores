@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id ("org.jetbrains.kotlin.kapt")
     id("com.google.dagger.hilt.android")
+    id ("androidx.navigation.safeargs.kotlin")
+
 }
 
 android {
@@ -64,6 +66,7 @@ dependencies {
     implementation ("androidx.legacy:legacy-support-v4:1.0.0")
     implementation ("androidx.room:room-ktx:$roomVersion")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0")
+    implementation ("androidx.fragment:fragment-ktx:1.5.2")
 
     implementation ("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation ("androidx.navigation:navigation-ui-ktx:$navVersion")
@@ -77,6 +80,7 @@ dependencies {
     //noinspection GradleCompatible
     //noinspection GradleCompatible
     implementation ("androidx.preference:preference:$preferencesVersion")
+    implementation("com.github.leandroborgesferreira:loading-button-android:2.3.0")
 
 
     implementation("com.google.dagger:hilt-android:2.48")
