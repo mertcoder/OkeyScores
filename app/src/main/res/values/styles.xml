@@ -16,13 +16,13 @@
     <style name="SkyBlueButtonStyle">
         <item name="android:background">@drawable/sky_blue_button</item>
         <item name="android:textColor">@color/bg_black</item>
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/poppins_thin</item>
     </style>
     <style name="WhiteButtonStyle">
         <item name="android:background">@drawable/white_button</item>
         <item name="android:textColor">@color/bg_black</item>
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/poppins_thin</item>
     </style>
 </resources>

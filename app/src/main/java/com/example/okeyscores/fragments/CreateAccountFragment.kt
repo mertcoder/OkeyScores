@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.okeyscores.databinding.CreateAccountFragmentBinding
 import com.example.okeyscores.datamodels.User
+import com.example.okeyscores.util.Resource
 import com.example.okeyscores.validation.RegisterValidation
 import com.example.okeyscores.viewmodels.CreateAccountViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -80,6 +82,24 @@ class CreateAccountFragment: Fragment() {
                             error = validation.username.message
                         }
                     }
+                }
+            }
+        }
+        lifecycleScope.launchWhenStarted {
+            viewModel.firebaseUser.collectLatest {
+                when(it){
+                    is Resource.Success->{
+                        binding.btnCreateAccount.revertAnimation()
+                        Toast.makeText(requireContext(), "Successfully created.", Toast.LENGTH_SHORT).show()
+                    }
+                    is Resource.Error->{
+                        binding.btnCreateAccount.revertAnimation()
+                        Toast.makeText(requireContext(), "${it.message}", Toast.LENGTH_SHORT).show()
+                    }
+                    is Resource.Loading->{
+                        binding.btnCreateAccount.startAnimation()
+                    }
+                    else->{}
                 }
             }
         }

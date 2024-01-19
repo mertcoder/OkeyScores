@@ -25,27 +25,27 @@ fun validatePassword(password: String): RegisterValidation{
     return RegisterValidation.Success
 }
 
-fun validateNickname(nickname: String): RegisterValidation{
-    if(nickname.isEmpty()){
-        return RegisterValidation.Failed("Nickname cannot be empty.")
+fun validateUsername(username: String): RegisterValidation{
+    if(username.isEmpty()){
+        return RegisterValidation.Failed("Username cannot be empty.")
     }
-    if(nickname.contains(" ")){
-        return RegisterValidation.Failed("Nickname cannot contain spaces.")
+    if(username.contains(" ")){
+        return RegisterValidation.Failed("Username cannot contain spaces.")
     }
-    if (nickname != nickname.toLowerCase()) {
-        return RegisterValidation.Failed("Nickname cannot contain upper cases.")
+    if (username != username.toLowerCase()) {
+        return RegisterValidation.Failed("Username cannot contain upper cases.")
     }
-    if (nickname.length < 3) {
-        return RegisterValidation.Failed("Nickname must be at least 3 characters.")
+    if (username.length < 3) {
+        return RegisterValidation.Failed("Username must be at least 3 characters.")
     }
-    if (nickname.length > 10) {
-        return RegisterValidation.Failed("Nickname cannot be longer than 10 characters.")
+    if (username.length > 10) {
+        return RegisterValidation.Failed("Username cannot be longer than 10 characters.")
     }
     // Özel karakterler kontrolü
     val specialCharacters = setOf('-', '_', '.')
-    for (char in nickname) {
+    for (char in username) {
         if (!char.isLetterOrDigit() && char !in specialCharacters) {
-            return RegisterValidation.Failed("Nickname can only contain '. _ -' ")
+            return RegisterValidation.Failed("Username can only contain '. _ -' ")
         }
     }
     return RegisterValidation.Success

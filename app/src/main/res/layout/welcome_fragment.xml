@@ -6,21 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_black">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/background"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
 
-        </ImageView>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -28,7 +19,16 @@
             android:layout_marginEnd="0dp"
             android:layout_marginTop="0dp"
             android:layout_marginBottom="0dp">
-
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:alpha=".3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/poker_bg" />
             <TextView
                 android:id="@+id/tvAppLogo"
                 style="@style/UpperAppNameStyle"
@@ -91,8 +91,9 @@
                 android:textSize="16sp">
             </TextView>
 
+
             <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
-                android:id="@+id/btnLogIn"
+                android:id="@+id/btnLogin"
                 style="@style/WhiteButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="55dp"
@@ -101,9 +102,9 @@
                 android:layout_marginEnd="30dp"
                 android:text="@string/login"
                 app:layout_constraintEnd_toStartOf="@id/guidelineRegisterRight"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@id/guidelineRegisterLeft"
                 app:layout_constraintTop_toBottomOf="@id/edPassword" />
-
 
             <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
                 android:id="@+id/btnSignIn"

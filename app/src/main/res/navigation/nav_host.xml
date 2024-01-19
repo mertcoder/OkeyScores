@@ -19,4 +19,9 @@
         android:name="com.example.okeyscores.fragments.CreateAccountFragment"
         android:label="CreateAccountFragment"
         tools:layout="@layout/create_account_fragment"/>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.okeyscores.fragments.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/splash_fragment"/>
 </navigation>

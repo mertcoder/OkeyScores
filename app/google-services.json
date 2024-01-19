@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "822168933102",
+    "firebase_url": "https://okey-scores-default-rtdb.firebaseio.com",
+    "project_id": "okey-scores",
+    "storage_bucket": "okey-scores.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822168933102:android:67fce61a5ed7ae109f59ff",
+        "android_client_info": {
+          "package_name": "com.example.okeyscores"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5DM7yRGAQoVnqeoYDVrki7nvt6lkKuNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

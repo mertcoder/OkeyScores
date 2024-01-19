@@ -4,6 +4,7 @@ plugins {
     id ("org.jetbrains.kotlin.kapt")
     id("com.google.dagger.hilt.android")
     id ("androidx.navigation.safeargs.kotlin")
+    id("com.google.gms.google-services")
 
 }
 
@@ -43,6 +44,11 @@ android {
 
 }
 dependencies {
+    implementation("com.google.firebase:firebase-auth:22.3.0")
+    implementation("com.google.firebase:firebase-database-ktx:20.3.0")
+    implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation("com.google.firebase:firebase-storage:20.3.0")
+    implementation("com.google.firebase:firebase-firestore:24.10.0")
     val lifeCycleExtensionVersion = "2.2.0"
     val retrofitVersion = "2.3.0"
     val supportVersion = "28.0.0"
