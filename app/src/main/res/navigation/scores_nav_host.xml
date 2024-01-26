@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/scores_nav_host">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scores_nav_host"
+    app:startDestination="@id/matchesFragment">
 
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="com.example.okeyscores.fragments.ScoresActivityFragments.MatchesFragment"
+        android:label="MatchesFragment"
+        tools:layout="@layout/matches_fragment">
+        <action
+            android:id="@+id/action_matchesFragment_to_createNewGameFragment"
+            app:destination="@id/createNewGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.okeyscores.fragments.ScoresActivityFragments.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/profile_fragment"/>
+    <fragment
+        android:id="@+id/rankFragment"
+        android:name="com.example.okeyscores.fragments.ScoresActivityFragments.RankFragment"
+        android:label="RankFragment"
+        tools:layout="@layout/rank_fragment"/>
+    <fragment
+        android:id="@+id/createNewGameFragment"
+        android:name="com.example.okeyscores.fragments.ScoresActivityFragments.CreateNewGameFragment"
+        android:label="CreateNewGameFragment"
+        tools:layout="@layout/create_new_game_fragment"/>
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.okeyscores.fragments
+package com.example.okeyscores.fragments.MainActivityFragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

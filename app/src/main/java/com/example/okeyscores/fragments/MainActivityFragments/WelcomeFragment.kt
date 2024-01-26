@@ -1,4 +1,4 @@
-package com.example.okeyscores.fragments
+package com.example.okeyscores.fragments.MainActivityFragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.okeyscores.activities.MainActivity
 import com.example.okeyscores.activities.ScoresActivity
 import com.example.okeyscores.databinding.WelcomeFragmentBinding
 import com.example.okeyscores.util.Resource
+import com.example.okeyscores.viewmodels.FCMViewModel
 import com.example.okeyscores.viewmodels.WelcomeFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -22,7 +25,7 @@ class WelcomeFragment: Fragment() {
     private var _binding : WelcomeFragmentBinding?=null
     private val binding get() = _binding!!
     private val viewModel by viewModels<WelcomeFragmentViewModel>()
-
+    private val fcmViewModel by activityViewModels<FCMViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -47,13 +50,11 @@ class WelcomeFragment: Fragment() {
                 when(it){
                     is Resource.Success->{
                         // uygulamaya yönlendir
-
                         binding.btnLogin.revertAnimation()
                         Toast.makeText(requireContext(), "logged in", Toast.LENGTH_SHORT).show()
                         println("aaaa"+it.data)
-                        val intent = Intent(activity, ScoresActivity::class.java)
-                        startActivity(intent)
-                        activity?.finish()
+                        activity?.recreate()
+
 
                     }
                     is Resource.Error->{

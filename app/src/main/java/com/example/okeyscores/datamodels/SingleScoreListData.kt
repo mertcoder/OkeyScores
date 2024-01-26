@@ -1,4 +1,9 @@
 package com.example.okeyscores.datamodels
 
-class SingleScoreListData {
-}
+import androidx.room.PrimaryKey
+
+data class SingleScoreListData(
+    val itemId: Int,
+    val firstTeamScore: Int,
+    val secondTeamScore: Int
+)

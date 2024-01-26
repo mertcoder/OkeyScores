@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.utils.loadPropertyFromResources
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -18,8 +21,8 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -29,6 +32,11 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "API_KEY", "\"${project.findProperty("API_KEY")}\"")
+
+        }
+        debug{
+            buildConfigField("String", "API_KEY", "\"${project.findProperty("API_KEY")}\"")
         }
     }
     compileOptions {
@@ -39,6 +47,7 @@ android {
         jvmTarget = "18"
     }
     buildFeatures{
+        android.buildFeatures.buildConfig = true
         viewBinding = true
     }
 
@@ -49,6 +58,7 @@ dependencies {
     implementation("com.google.firebase:firebase-database:20.3.0")
     implementation("com.google.firebase:firebase-storage:20.3.0")
     implementation("com.google.firebase:firebase-firestore:24.10.0")
+    implementation("com.google.firebase:firebase-messaging:23.4.0")
     val lifeCycleExtensionVersion = "2.2.0"
     val retrofitVersion = "2.3.0"
     val supportVersion = "28.0.0"
@@ -91,6 +101,13 @@ dependencies {
 
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
+
+
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
 }
 kapt {
     correctErrorTypes = true

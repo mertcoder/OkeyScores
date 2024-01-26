@@ -19,10 +19,24 @@
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/poppins_thin</item>
     </style>
+    <style name="CardViewStyle">
+        <item name="android:bottomRightRadius">25dp</item>
+        <item name="cardCornerRadius">45dp</item>
+
+
+    </style>
     <style name="WhiteButtonStyle">
         <item name="android:background">@drawable/white_button</item>
         <item name="android:textColor">@color/bg_black</item>
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/poppins_thin</item>
+    </style>
+    <style name="PopupMenuStyle" parent="@android:style/Widget.PopupMenu">
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+    </style>
+
+    <style name="PopupMenu" parent="@android:style/Widget.Holo.Light.PopupMenu">
+        <item name="android:popupBackground">@color/cool_pink</item>
+        <item name="android:width">200dp</item> <!-- Genişliği burada belirleniyor -->
     </style>
 </resources>

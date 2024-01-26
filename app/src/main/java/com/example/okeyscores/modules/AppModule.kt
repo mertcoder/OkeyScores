@@ -6,9 +6,12 @@ import com.example.okeyscores.repo.AuthRepository
 import com.example.okeyscores.repo.BaseAuthRepository
 import com.example.okeyscores.repo.FirebaseUserDbRepository
 import com.example.okeyscores.repo.UserDbRepository
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
+import com.google.firebase.messaging.FirebaseMessaging
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,6 +30,13 @@ object AppModule {
 
     @Singleton
     @Provides
+    fun provideAuth():  FirebaseAuth{
+        return FirebaseAuth.getInstance()
+    }
+
+
+    @Singleton
+    @Provides
     fun provideRepository(authenticator: BaseAuthenticator): BaseAuthRepository{
         return AuthRepository(authenticator)
     }
@@ -42,4 +52,11 @@ object AppModule {
     fun provideFirebaseUserDbRepository(db: FirebaseFirestore): UserDbRepository{
         return FirebaseUserDbRepository(db)
     }
+
+    @Singleton
+    @Provides
+    fun provideFirebaseCloudMessaging(): FirebaseMessaging{
+        return FirebaseMessaging.getInstance()
+    }
+
 }

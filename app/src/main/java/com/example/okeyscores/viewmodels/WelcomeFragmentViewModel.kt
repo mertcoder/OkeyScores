@@ -7,6 +7,7 @@ import com.example.okeyscores.repo.AuthRepository
 import com.example.okeyscores.repo.BaseAuthRepository
 import com.example.okeyscores.repo.FirebaseUserDbRepository
 import com.example.okeyscores.util.Resource
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,7 +19,7 @@ import javax.inject.Inject
 @HiltViewModel
 class WelcomeFragmentViewModel @Inject constructor(
     private val db: FirebaseUserDbRepository,
-    private val auth: AuthRepository
+    private val auth: FirebaseAuth
 ): ViewModel() {
 
     private val _signedUser = MutableSharedFlow<Resource<User?>>()
@@ -28,16 +29,19 @@ class WelcomeFragmentViewModel @Inject constructor(
 
     fun signIn(email: String, password: String) = viewModelScope.launch{
         _signedUser.emit(Resource.Loading())
-        try{
-            val loggedInFirebaseUser = auth.signInWithEmailPassword(email,password)
-            if(loggedInFirebaseUser!=null){
-                val loggedInUser = db.getUserInfo(email)
-                _signedUser.emit(Resource.Success(loggedInUser))
+        auth.signInWithEmailAndPassword(email,password).addOnSuccessListener {
+            if(it!=null){
+                viewModelScope.launch {
+                    val loggedInUser = db.getUserInfo(email)
+                    _signedUser.emit(Resource.Success(loggedInUser))
+                }
             }else{
-                _signedUser.emit(Resource.Error("No matching account."))
+                viewModelScope.launch {_signedUser.emit(Resource.Error("No matching account.")) }
             }
-        }catch (e: Exception){
-            _signedUser.emit(Resource.Error(e.message.toString()))
+
+        }.addOnFailureListener{
+            viewModelScope.launch {_signedUser.emit(Resource.Error("${it.message.toString()}")) }
+
         }
     }
 }

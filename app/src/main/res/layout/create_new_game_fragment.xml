@@ -1,6 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_black">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="55dp"
+        android:backgroundTint="#1E1E1E"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/l1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvFirstTeam"
+                    style="@style/UpperAppNameStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:text="1st Team"
+                    android:textColor="@color/sky_blue">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tvSecondTeam"
+                    style="@style/UpperAppNameStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="2nd Team"
+                    android:textColor="@color/sky_blue">
+                </TextView>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/v1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/sky_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/l1">
+            </View>
+
+            <TextView
+                android:id="@+id/tvAddScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="ADD SCORE"
+                android:textColor="@color/sky_blue"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/v1"
+                app:layout_constraintStart_toStartOf="@id/v1"
+                app:layout_constraintTop_toBottomOf="@id/v1">
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/l2"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/v1"
+                app:layout_constraintStart_toStartOf="@id/v1"
+                app:layout_constraintTop_toBottomOf="@id/tvAddScore">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tvPlayerOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="12dp"
+                            android:text="MERT"
+                            android:textColor="@color/white"
+                            android:textSize="21sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/edPlayerOne"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#303030"
+                            android:inputType="numberSigned"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@id/tvPlayerOne"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvPlayerOne"
+                            app:layout_constraintTop_toTopOf="@id/tvPlayerOne">
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/tvPlayerTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="12dp"
+                            android:text="SELEN"
+                            android:textColor="@color/white"
+                            android:textSize="21sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/edPlayerTwo"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#303030"
+                            android:inputType="numberSigned"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@id/tvPlayerTwo"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvPlayerTwo"
+                            app:layout_constraintTop_toTopOf="@id/tvPlayerTwo">
+                        </EditText>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tvPlayerThree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="12dp"
+                            android:text="MERT"
+                            android:textColor="@color/white"
+                            android:textSize="21sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/edPlayerThree"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#303030"
+                            android:inputType="numberSigned"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@id/tvPlayerThree"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvPlayerThree"
+                            app:layout_constraintTop_toTopOf="@id/tvPlayerThree">
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/tvPlayerFour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="12dp"
+                            android:text="SELEN"
+                            android:textColor="@color/white"
+                            android:textSize="21sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/edPlayerFour"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#303030"
+                            android:inputType="numberSigned"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@id/tvPlayerFour"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvPlayerFour"
+                            app:layout_constraintTop_toTopOf="@id/tvPlayerFour">
+                        </EditText>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </LinearLayout>
+
+            <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+                android:id="@+id/btnAddScore"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/ic_add"
+                android:backgroundTint="@color/sky_blue"
+                app:layout_constraintEnd_toEndOf="@id/l2"
+                app:layout_constraintTop_toBottomOf="@id/l2">
+            </com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton>
+
+            <TextView
+                android:id="@+id/tvAddScores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SCORES"
+                android:textColor="@color/sky_blue"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="@id/v1"
+                app:layout_constraintStart_toStartOf="@id/v1"
+                app:layout_constraintTop_toBottomOf="@id/btnAddScore">
+            </TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewScores"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="55dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/v1"
+                app:layout_constraintStart_toStartOf="@id/v1"
+                tools:listitem="@layout/item_scores"
+                app:layout_constraintTop_toBottomOf="@id/tvAddScores">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/tvFirstTeamScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/sky_blue"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewScores">
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/tvSecondTeamScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/sky_blue"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@id/guidelineCenter"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewScores"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+            </TextView>
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+    <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/btnFinish"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="FINISH"
+        android:textSize="14sp"
+        android:backgroundTint="@color/sky_blue"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp">
+    </com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

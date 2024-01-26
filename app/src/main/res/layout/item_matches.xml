@@ -1,6 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#00000000"
+    android:layout_marginTop="15dp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#1B1B1B"
+        app:cardCornerRadius="15dp"
+        android:elevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent ">
 
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvWinOrLose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WIN"
+                android:textColor="@color/sky_blue"
+                android:textSize="25sp"
+                android:fontFamily="@font/inter_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/tvFirstTeamTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="First Team"
+                android:textColor="@color/sky_blue"
+                 android:textSize="20sp"
+                android:fontFamily="@font/inter_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvWinOrLose">
+            </TextView>
+            <TextView
+                android:id="@+id/tvFirstPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@id/tvFirstTeamTitle"
+                app:layout_constraintStart_toStartOf="@id/tvFirstTeamTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvFirstTeamTitle"
+                android:text="mert123"
+                android:textColor="@color/white">
+            </TextView>
+            <TextView
+                android:id="@+id/tvSecondPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="6dp"
+                app:layout_constraintTop_toBottomOf="@id/tvFirstPlayer"
+                app:layout_constraintStart_toStartOf="@id/tvFirstTeamTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvFirstTeamTitle"
+                android:text="mert123"
+                android:textColor="@color/white">
+            </TextView>
+            <TextView
+                android:id="@+id/tvScoreFirstTeam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:layout_marginTop="6dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSecondPlayer"
+                app:layout_constraintStart_toStartOf="@id/tvFirstTeamTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvFirstTeamTitle"
+                android:text="165"
+                android:textColor="@color/white">
+            </TextView>
+            <TextView
+                android:id="@+id/tvSecondTeamTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="Second Team"
+                android:textColor="@color/sky_blue"
+                android:textSize="20sp"
+                android:fontFamily="@font/inter_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvWinOrLose">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="13dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="08.01.2004 13:25"
+                android:textColor="#EFEFEF"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvWinOrLose"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvWinOrLose">
+
+            </TextView>
+            <TextView
+                android:id="@+id/tvThirdPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSecondTeamTitle"
+                app:layout_constraintStart_toStartOf="@id/tvSecondTeamTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvSecondTeamTitle"
+                android:text="mert123"
+                android:textColor="@color/white">
+            </TextView>
+            <TextView
+                android:id="@+id/tvFourthPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="6dp"
+                app:layout_constraintTop_toBottomOf="@id/tvThirdPlayer"
+                app:layout_constraintStart_toStartOf="@id/tvSecondTeamTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvSecondTeamTitle"
+                android:text="mert123"
+                android:textColor="@color/white">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvScoreSecondTeam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:layout_marginTop="6dp"
+                app:layout_constraintTop_toBottomOf="@id/tvFourthPlayer"
+                app:layout_constraintStart_toStartOf="@id/tvSecondTeamTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvSecondTeamTitle"
+                android:text="165"
+                android:textColor="@color/white">
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

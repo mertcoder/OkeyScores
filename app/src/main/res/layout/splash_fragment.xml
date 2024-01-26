@@ -17,17 +17,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/poker_bg" />
     <!-- Auto layout, variables, and unit scale are not yet supported -->
-    <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
-        android:id="@+id/rectangle_3"
-        android:layout_width="300dp"
-        android:layout_height="55dp"
-        android:text="Log In"
-        android:textSize="18sp"
-        android:textColor="@color/bg_black"
-        android:background="@drawable/blue_rectangle"
-        android:elevation="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="35dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

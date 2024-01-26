@@ -9,4 +9,6 @@
     <color name="rose_red">#db0054</color>
     <color name="cool_pink">#dd40f3</color>
     <color name="marcus_purple">#6312ac</color>
+    <color name="white_small">#f5f5f5</color>
+    <color name="grey_white">#CCCCCC</color>
 </resources>

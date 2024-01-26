@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-  
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/matchesFragment"
+        android:title="Matches"
+        android:icon="@drawable/svg_matches"/>
+
+    <item android:id="@+id/rankFragment"
+        android:title="Rank"
+        android:icon="@drawable/svg_rank">
+    </item>
+    <item android:id="@+id/profileFragment"
+        android:title="Profile"
+        android:icon="@drawable/svg_profile">
+    </item>
 </menu>
