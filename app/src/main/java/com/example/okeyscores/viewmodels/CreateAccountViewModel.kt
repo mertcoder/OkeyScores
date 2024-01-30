@@ -13,6 +13,7 @@ import com.example.okeyscores.validation.validateName
 import com.example.okeyscores.validation.validateUsername
 import com.example.okeyscores.validation.validatePassword
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -24,7 +25,8 @@ import javax.inject.Inject
 @HiltViewModel
 class CreateAccountViewModel @Inject constructor(
     private val repository: BaseAuthRepository,
-    private val db: FirebaseUserDbRepository
+    private val db: FirebaseUserDbRepository,
+    private val firestore: FirebaseFirestore
 ): ViewModel() {
     private val _validation = Channel<RegisterFieldState>()
     val validation = _validation.receiveAsFlow()
@@ -58,6 +60,7 @@ class CreateAccountViewModel @Inject constructor(
     private fun signUpUser(user: User,password: String) = viewModelScope.launch{
         _firebaseUser.emit(Resource.Loading())
         try{
+
             val firebaseUser = repository.signUpWithEmailPassword(user.email, password)
             firebaseUser?.let {
                 _firebaseUser.emit(Resource.Success(firebaseUser))
@@ -68,4 +71,5 @@ class CreateAccountViewModel @Inject constructor(
         }
 
     }
+
 }

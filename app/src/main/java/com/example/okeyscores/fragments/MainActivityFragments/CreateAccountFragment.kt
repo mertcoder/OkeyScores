@@ -19,6 +19,7 @@ import com.example.okeyscores.viewmodels.FCMViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
@@ -28,6 +29,8 @@ class CreateAccountFragment: Fragment() {
     private val viewModel by viewModels<CreateAccountViewModel>()
     private val fcmViewModel by activityViewModels<FCMViewModel>()
     private var fcmToken: String?=null
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -54,6 +57,9 @@ class CreateAccountFragment: Fragment() {
                 viewModel.validateUser(user,password)
             }
         }
+
+
+
         lifecycleScope.launchWhenStarted {
             viewModel.validation.collectLatest { validation->
                 if(validation.email is RegisterValidation.Failed){

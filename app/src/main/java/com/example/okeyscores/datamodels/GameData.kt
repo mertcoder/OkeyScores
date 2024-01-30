@@ -13,9 +13,10 @@ data class GameData(
     val firstTeamTotalScore: Int,
     val secondTeamAllScores: ArrayList<Int>,
     val secondTeamTotalScore: Int,
-    val timeStamp: String
+    val timeStamp: String,
+    val matchHistory: ArrayList<SingleScoreListData>
 ){
-    constructor(): this(arrayListOf(), arrayListOf(),0, arrayListOf(),0,"")
+    constructor(): this(arrayListOf(), arrayListOf(),0, arrayListOf(),0,"", arrayListOf())
 
     fun getDateTime(): Date {
         val sdf = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())

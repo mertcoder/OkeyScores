@@ -3,6 +3,7 @@ package com.example.okeyscores.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.okeyscores.datamodels.GameData
+import com.example.okeyscores.datamodels.SingleScoreListData
 import com.example.okeyscores.repo.AuthRepository
 import com.example.okeyscores.util.Resource
 import com.google.firebase.firestore.FirebaseFirestore
@@ -37,16 +38,25 @@ class MatchesViewModel @Inject constructor(
 
                 if (usersGamesList != null) {
                     for (hashmap in usersGamesList){
+                        val userMatchHistoryList = ArrayList<SingleScoreListData>()
+                        val historyHashmap =  hashmap["matchHistory"] as ArrayList<HashMap<Any,Any>>
+                        for(it in historyHashmap) {
+                            val singleMatch = SingleScoreListData(
+                                secondTeamScore = it["secondTeamScore"].toString().toInt() as Int,
+                                itemId = it["itemId"].toString().toInt() as Int,
+                                firstTeamScore = it["firstTeamScore"].toString().toInt() as Int,
+                                )
+                            userMatchHistoryList.add(singleMatch)
+                        }
                         val gamedata = GameData(
                             hashmap["players"] as ArrayList<String>,
                             hashmap["firstTeamAllScores"] as ArrayList<Int>,
                             hashmap["firstTeamTotalScore"].toString().toInt() as Int,
                             hashmap["secondTeamAllScores"] as ArrayList<Int>,
                             hashmap["secondTeamTotalScore"].toString().toInt() as Int,
-                            hashmap["timeStamp"] as String
-
+                            hashmap["timeStamp"] as String,
+                            userMatchHistoryList
                         )
-
 
                         gameDataList.add(gamedata)
                     }

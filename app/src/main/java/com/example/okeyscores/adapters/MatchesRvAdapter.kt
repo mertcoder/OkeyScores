@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.okeyscores.R
 import com.example.okeyscores.databinding.ItemMatchesBinding
 import com.example.okeyscores.datamodels.GameData
 
@@ -58,6 +60,7 @@ class MatchesRvAdapter: RecyclerView.Adapter<MatchesRvAdapter.MatchesHolder>() {
                 }
             }
 
+
         }
 
         private fun returnWinner(firstTeamTotalScore: Int, secondTeamTotalScore: Int): Int {
@@ -105,7 +108,13 @@ class MatchesRvAdapter: RecyclerView.Adapter<MatchesRvAdapter.MatchesHolder>() {
     }
 
     override fun onBindViewHolder(holder: MatchesHolder, position: Int) {
+        val adapter = ChildScoresRvAdapter()
         holder.bind(differ.currentList[position])
+        holder.binding.rvChildMatchHistory.layoutManager = LinearLayoutManager(holder.itemView.context,LinearLayoutManager.VERTICAL,false)
+        holder.binding.rvChildMatchHistory.adapter = adapter
+        adapter.submitList(differ.currentList[position].matchHistory)
+
+
     }
 
     fun submitList(newList: ArrayList<GameData>){

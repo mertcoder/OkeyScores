@@ -3,6 +3,7 @@ package com.example.okeyscores.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.okeyscores.datamodels.GameData
+import com.example.okeyscores.datamodels.SingleScoreListData
 import com.example.okeyscores.repo.AuthRepository
 import com.example.okeyscores.util.Resource
 import com.google.firebase.Timestamp
@@ -27,7 +28,7 @@ class CreateNewGameViewModel @Inject constructor(
     val checkStatus get() = _checkStatus.consumeAsFlow()
 
 
-    fun uploadGameData(players: ArrayList<String>, firstTeamAllScores: ArrayList<Int>, firstTeamTotalScore: Int, secondTeamAllScores: ArrayList<Int>, secondTeamTotalScore: Int,secondUserMail: String,thirdUserMail:String,fourthUserMail: String){
+    fun uploadGameData(players: ArrayList<String>, firstTeamAllScores: ArrayList<Int>, firstTeamTotalScore: Int, secondTeamAllScores: ArrayList<Int>, secondTeamTotalScore: Int,secondUserMail: String,thirdUserMail:String,fourthUserMail: String, matchHistory: ArrayList<SingleScoreListData>){
         viewModelScope.launch { _checkStatus.send(Resource.Loading()) }
         if(firstTeamAllScores.isNullOrEmpty() or secondTeamAllScores.isNullOrEmpty()){
             viewModelScope.launch {
@@ -35,7 +36,7 @@ class CreateNewGameViewModel @Inject constructor(
             }
         }else{
             val timestampString = timestampToString(getCurrentTime())
-            val gameData = GameData(players,firstTeamAllScores,firstTeamTotalScore,secondTeamAllScores,secondTeamTotalScore,timestampString)
+            val gameData = GameData(players,firstTeamAllScores,firstTeamTotalScore,secondTeamAllScores,secondTeamTotalScore,timestampString,matchHistory)
             saveGameToUser(gameData,auth.getUser()!!.email.toString())
             saveGameToUser(gameData,secondUserMail)
             saveGameToUser(gameData,thirdUserMail)

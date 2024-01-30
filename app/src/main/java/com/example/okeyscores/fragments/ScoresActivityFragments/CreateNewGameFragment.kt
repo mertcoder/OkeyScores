@@ -116,7 +116,7 @@ class CreateNewGameFragment: Fragment(R.layout.create_new_game_fragment){
                 firstTeamAllScoresList.add(it.firstTeamScore)
                 secondTeamAllScoresList.add(it.secondTeamScore)
             }
-            viewModel.uploadGameData(players,firstTeamAllScoresList,firstTeamTotalScore,secondTeamAllScoresList,secondTeamTotalScore,secondUserMail,thirdUserMail,fourthUserMail)
+            viewModel.uploadGameData(players,firstTeamAllScoresList,firstTeamTotalScore,secondTeamAllScoresList,secondTeamTotalScore,secondUserMail,thirdUserMail,fourthUserMail,scoresList)
         }
     }
 
