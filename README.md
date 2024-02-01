@@ -7,6 +7,7 @@ Firebase FCM, Auth, Firestore, Realtime-Db, Dagger Hilt used, MVVM structure.
 - You enter their usernames and if the usernames are valid you can create a match with this users and save it to firestore.
 - You can see your all matches in your app, also you can see matches that is not created by you but when you're a player in that.
 - Firebase Cloud Messaging service saves user token dynamically, this feature for using notifications.
+- Uses MotionLayout:)
 
 **Need to Develop that Features**
 - User profile picture upload is not enabled and coded.
