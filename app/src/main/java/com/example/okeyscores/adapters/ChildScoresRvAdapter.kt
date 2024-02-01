@@ -42,11 +42,7 @@ class ChildScoresRvAdapter: RecyclerView.Adapter<ChildScoresRvAdapter.ScoresHold
     }
 
     override fun onBindViewHolder(holder: ScoresHolder, position: Int) {
-        val arrayedHashmap =  differ.currentList
-        val arraaay = arrayedHashmap.toCollection(ArrayList())
-        val x = arraaay[0]
-        println(x.itemId)
-        holder.bind(differ.currentList.get(position))
+        holder.bind(differ.currentList[position])
 
     }
 
